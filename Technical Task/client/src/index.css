@@ -1,0 +1,8 @@
+a {
+  text-decoration: none !important;
+}
+span{
+  color: red;
+  font-size: 13px !important;
+  font-weight: 400;
+}

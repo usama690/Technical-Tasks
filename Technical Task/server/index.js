@@ -11,6 +11,7 @@ require("dotenv").config();
 app.use(bodyParser.json());
 app.use(express.json())
 
+//cors
 app.use(function (req, res, next) {
     res.header('Access-Control-Allow-Methods', 'DELETE,PUT,POST,GET,PATCH') // update to match the domain you will make the request from
     res.header('Access-Control-Allow-Origin', '*') // update to match the domain you will make the request from
@@ -28,10 +29,6 @@ app.use("/", require("./Routes/route"));
 app.use((error, req, res, next) => {
     res.status(200).json({ error, success: false, message: error.message });
 });
-
-
-// app.use(cors())
-
 
 if (process.env.NODE_ENV == "development") {
     app.use(cors({ origin: `http://localhost:3000` }));

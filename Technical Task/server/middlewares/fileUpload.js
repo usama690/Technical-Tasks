@@ -19,13 +19,7 @@ var upload = multer({
         let ext = path.extname(file.originalname)
         console.log(ext, 'extension')
         req.file = file
-
-        // if (
-        //     file.mimetype === "image/png" ||
-        //     file.mimetype === "image/jpeg" || file.mimetype === "application/docx" || file.mimetype === "application/pdf"
-        // ) {
-            callback(null, true)
-        // }
+        callback(null, true)
 
     },
     limits: {
